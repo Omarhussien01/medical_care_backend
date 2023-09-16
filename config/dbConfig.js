@@ -1,3 +1,4 @@
+import mongoose from 'mongoose'
 const connectDb = async () => {
     try {
         // Make sure to specify the URI as a string here
