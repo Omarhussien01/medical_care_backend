@@ -1,5 +1,5 @@
 import User from "../models/UserModel.js";
-
+import { sendEmail } from "../Utils/nodeMailer.js";
 import asyncHandler from 'express-async-handler';
 
 export const updateUser = asyncHandler(async (req, res) =>{
@@ -12,6 +12,11 @@ export const updateUser = asyncHandler(async (req, res) =>{
             { new: true }
         );
         res.status(200).json({ success: true, data: updatedUser });
+        sendEmail(
+            updatedUser.email,
+            "Your profile Has been updated",
+            "Please check your profile for updates"
+          );
     } catch (error) {
         // Handle errors
         throw new Error(error);
