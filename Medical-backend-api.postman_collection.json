@@ -1,0 +1,397 @@
+{
+	"info": {
+		"_postman_id": "552753fa-08c5-4572-b9a9-b37d1969c866",
+		"name": "Medical-backend-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"omar.metwally6@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"role\":\"patient\",\r\n    \"name\":\"Omar Metwally\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"omar.metwally@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJfaWQiOiI2NGZmMGEwY2Y2NDA2MGQyYjM5ZTNiYzAiLCJlbWFpbCI6Im9tYXIubWV0d2FsbHlAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkcHJrendER2dTS3pNRGU1cTN6R2FiLmU3VlJvSFJneG1FYjZ6d3Bvcjk3cEVTRjg1a2wwbXUiLCJuYW1lIjoiT21hciBNZXR3YWxseSIsInJvbGUiOiJkb2N0b3IiLCJxdWFsaWZpY2F0aW9ucyI6W10sImV4cGVyaWVuY2VzIjpbXSwidGltZVNsb3RzIjpbXSwicmV2aWV3cyI6W10sImF2ZXJhZ2VSYXRpbmciOjAsInRvdGFsUmF0aW5nIjowLCJpc0FwcHJvdmVkIjoicGVuZGluZyIsImFwcG9pbnRtZW50cyI6W10sIl9fdiI6MH0sImlhdCI6MTY5NDQ2NDQ2MiwiZXhwIjoxNjk0NTUwODYyfQ.XAC7zYqjq8quc8_IoDRgRiygOaW9Py94L2ZojUZAI0U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/user/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/user/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update One User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/user/64ff09bff64060d2b39e3bbc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"64ff09bff64060d2b39e3bbc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/user/64ff09bff64060d2b39e3bbc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"64ff09bff64060d2b39e3bbc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctor",
+			"item": [
+				{
+					"name": "Get All Doctors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/doctor/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"doctor",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Doctor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/doctor/64ff17b1364b1af0f82d3adf",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"doctor",
+								"64ff17b1364b1af0f82d3adf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Doctor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/doctor/64ff17b1364b1af0f82d3adf",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"doctor",
+								"64ff17b1364b1af0f82d3adf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Doctor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/doctor/64ff17b1364b1af0f82d3adf",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"doctor",
+								"64ff17b1364b1af0f82d3adf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZmYwYTBjZjY0MDYwZDJiMzllM2JjMCIsInJvbGUiOiJkb2N0b3IiLCJpYXQiOjE2OTQ1NTM1NDEsImV4cCI6MTY5NDYzOTk0MX0.ALb-1HF-ECwrxmxD08pHxJb_imvE17ZWrVdrgLv7JL8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patientId\":\"6500b6f2ac158daf3997cdc4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/doctor/64ff0a0cf64060d2b39e3bc0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"doctor",
+								"64ff0a0cf64060d2b39e3bc0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Patient from Doctor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZmYwYTBjZjY0MDYwZDJiMzllM2JjMCIsInJvbGUiOiJkb2N0b3IiLCJpYXQiOjE2OTQ1NTM1NDEsImV4cCI6MTY5NDYzOTk0MX0.ALb-1HF-ECwrxmxD08pHxJb_imvE17ZWrVdrgLv7JL8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patientId\":\"6500b6f2ac158daf3997cdc4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/doctor/64ff0a0cf64060d2b39e3bc0/6500b6f2ac158daf3997cdc4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"doctor",
+								"64ff0a0cf64060d2b39e3bc0",
+								"6500b6f2ac158daf3997cdc4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prescriptions",
+			"item": [
+				{
+					"name": "Create Prescription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Zurcal\",\r\n    \"intervals\":\"12h\",\r\n    \"instructions\":\"You should take 1 bill every 12H after eating your meal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/presciption/65008206b02c91817de4e421",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"presciption",
+								"65008206b02c91817de4e421"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Prescriptions",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update Prescription",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Flumox\",\r\n    \"intervals\":\"8H\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/presciption/65008206b02c91817de4e421/6500845b49f384f7b05ed16e",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"presciption",
+								"65008206b02c91817de4e421",
+								"6500845b49f384f7b05ed16e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete prescription",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
